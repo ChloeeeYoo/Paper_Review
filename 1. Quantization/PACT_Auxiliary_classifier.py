@@ -68,8 +68,8 @@ model = ResNet(num_classes=num_classes)
 criterion = nn.CrossEntropyLoss()
 
 # Assuming you have the input data 'inputs' and corresponding labels 'targets'
-outputs, aux1, aux2, aux3 = model(inputs)       #각 label들 input으로 입력
-loss1 = criterion(aux1, targets)                #각각의 loss 값 출력
+outputs, aux1, aux2, aux3 = model(inputs)       #model(inputs)을 통해 동일하게 input 
+loss1 = criterion(aux1, targets)                #각각의 loss 값 출력 (main loss와 같은 targets 사용)
 loss2 = criterion(aux2, targets)
 loss3 = criterion(aux3, targets)
 main_loss = criterion(outputs, targets)
